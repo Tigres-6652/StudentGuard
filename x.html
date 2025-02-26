@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+    <title>Student Guard</title>
+</head>
+<body>
+    <header >
+        <div class="header">
+            <div class="header_logo">
+                <img src="./imgs/Logo_Student.jpeg" alt="Logo Student Guard">
+            </div>
+            <hr class="hr_header">
+            <nav class="nav">
+                <ul>
+                    <li><a href="">Map</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="scrol"></div>
+    </header>
+    <main>
+        <div id="map"></div>
+
+        <section class="colors">
+            <div class="blue">
+                <h2>Blue</h2>
+                <p>There <br> was an <br> assault here</p>
+                <hr>
+            </div>
+            <div class="green">
+                <h2>Green</h2>
+                <p>Moderate <br> concentration of <br>risky points</p>
+                <hr>
+            </div>
+            <div class="yellow">
+                <h2>Yellow</h2>
+                <p>High <br> concentration of <br> risky points</p>
+                <hr>
+            </div>
+            <div class="red">
+                <h2>Red</h2>
+                <p>High <br> concentration  of <br>risky points</p>
+                <hr>
+            </div>
+        </section>
+
+    </main>
+    
+     
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+
+    <script src="./dist/leaflet-heat.js"></script>
+   
+    <script src="http://leaflet.github.io/Leaflet.markercluster/example/realworld.10000.js"></script>
+    
+
+   <script>
+        var map = L.map('map').setView([25.6936962, -100.2685415], 14.5);
+        
+        var tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+        }).addTo(map);
+        var heat = L.heatLayer([
+        [25.740559, -100.2659, 2],
+        [25.6936962, -100.2685415, 0.5],
+        [25.703228, -100.268867, 2],
+        [25.69641, -100.267669, 0.5],
+        [25.688154, -100.268662, 2],
+        [25.700125, -100.268418, 0.5],
+        [25.687884, -100.268106, 0.5],
+        [25.696532, -100.268553, 2],
+        [25.703028, -100.26843, 2],
+        [25.685978, -100.268926, 0.5],
+        [25.69508, -100.271982, 0.5],
+        [25.69507077, -100.270229, 2],
+        [25.695355, -100.268146, 0.5],
+        [25.695195, -100.269292, 0.5],
+        [25.682981, -100.276949, 2],
+        [25.701473, -100.268045, 0.5],
+        [25.690488, -100.268171, 2],
+        [25.695157, -100.277431, 0.5],
+        [25.702618, -100.269084, 0.5],
+        [25.692238, -100.267999, 0.5],
+        [25.687801, -100.268189, 2],
+        [25.692433, -100.268531, 0.5],
+        [25.69886, -100.268187, 2],
+        [25.70314, -100.26843, 2],
+        [25.685254, -100.270456, 0.5],
+        [25.69593, -100.26844, 0.5],
+        [25.70291, -100.26829, 0.5],
+        [25.703296, -100.269269, 0.5],
+        [25.70289, -100.26719, 2],
+        [25.68641, -100.26847, 0.5],
+        [25.68607, -100.26854, 0.5],
+        [25.70258, -100.27832, 2],
+        [25.69122, -100.27368, 0.5],
+        [25.69863, -100.26859, 2],
+        [25.69038, -100.268155, 0.5],
+        [25.28401, -100.27488, 0.5],
+        [25.69273, -100.26857, 0.5],
+        [25.6942, -100.26087, 0.5],
+        [25.68747, -100.26854, 2],
+        [25.7025, -100.26846, 0.5],
+        [25.704892, -100.267949, 0.5],
+        [25.701337, -100.265994, 0.5],
+        [25.686149, -100.266269, 2],
+        [25.694468, -100.268119, 0.5],
+        [25.693158, -100.268484, 0.5],
+        [25.685098, -100.275626, 0.5],
+        [25.691005, -100.270227, 2],
+        [25.67973, -100.24477, 0.5],
+        [25.697831, -100.268851, 0.5],
+        [35.685252, -100.271308, 2],
+        [25.702375, -100.267914, 0.5],
+        [25.683215, -100.278962, 2],
+
+        ], {radius: 30,
+        minOpacity:0.6,
+        }).addTo(map);
+
+        var myIcon = L.icon({
+        iconUrl: './assets/icon.png',
+        iconSize: [60, 55],
+        popupAnchor: [-3, -76],
+        shadowSize: [68, 95],
+        shadowAnchor: [22, 94]
+        });
+        function puntosDeDondeRobaron(l,a){
+            L.marker([l,a], {icon: myIcon}).addTo(map)
+            .bindPopup('there was an assault here')
+        }
+        puntosDeDondeRobaron(25.684798,-100.27214)
+        puntosDeDondeRobaron(25.740559, -100.2659)
+        puntosDeDondeRobaron(25.703228, -100.268867)
+        puntosDeDondeRobaron(25.688154, -100.268662)
+        puntosDeDondeRobaron(25.696532, -100.268553)
+        puntosDeDondeRobaron(25.703028, -100.26843)
+        puntosDeDondeRobaron(25.69507077, -100.270229)
+        puntosDeDondeRobaron(25.682981, -100.276949)
+        puntosDeDondeRobaron(25.690488, -100.268171)
+        puntosDeDondeRobaron(25.687801, -100.268189)
+        puntosDeDondeRobaron(25.69886, -100.268187)
+        puntosDeDondeRobaron(25.70314, -100.26843)
+        puntosDeDondeRobaron(25.70289, -100.26719)
+        puntosDeDondeRobaron(25.686149, -100.266269)
+        puntosDeDondeRobaron(25.70258, -100.27832)
+        puntosDeDondeRobaron(25.691005, -100.270227)
+        puntosDeDondeRobaron(35.685252, -100.271308)
+        puntosDeDondeRobaron(25.683215, -100.278962)
+        puntosDeDondeRobaron(25.684798, -100.27214)
+    </script>
+
+    <script src="./Scripts/navBarFijo.js"></script>
+</body>
+</html>

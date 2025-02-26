@@ -1,0 +1,77 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+}
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: #80c9fe;
+}
+
+/*Parte de arriba del header donde esta el logo y la iamgen del logo  */
+header{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: space-between;
+}
+header .header_logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 3%;
+}
+header .header_navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 8%;
+}
+header .header_navbar img{
+    width: 50px;
+    height: 50px;
+}
+
+main {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+main  .button_map{
+    width: 60%;
+    height: 10vh;
+    background-color: #3535ed;
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+    margin-top: 4%;
+}
+main  .button_map .button_img_map  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 27%;
+    height: 70%;
+    background-color: #2a2abe;
+    border-radius: 50px;
+    margin-left: 5%;
+}
+main  .button_map button{
+    width: 50%;
+    border: none;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+main  .button_map button a{
+    color: white;
+}

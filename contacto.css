@@ -1,0 +1,141 @@
+/* Reset de estilos básicos */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Tamaño base de fuente */
+html {
+    font-size: 62.5%;
+}
+
+/* Estilos para el cuerpo */
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: #80c9fe; /* Fondo azul claro */
+    font-family: Arial, sans-serif; /* Tipografía general */
+}
+
+/* Estilos del encabezado */
+header {
+    width: 100%;
+    height: 15%; /* Altura del encabezado */
+    display: flex;
+    justify-content: space-between; /* Espacio entre los elementos */
+    align-items: center; /* Centrado vertical */
+    padding: 0 2%; /* Padding en los lados para espacio extra */
+    /* Color de fondo oscuro para el encabezado */
+}
+
+/* Estilo para el logo */
+.header_logo img {
+    height: 100%; /* Ajusta el logo para que se ajuste a la altura del header */
+    max-height: 80px; /* Maxima altura para evitar que crezca demasiado */
+    object-fit: contain; /* Asegura que el logo no se distorsione */
+}
+
+/* Estilos de la barra de navegación */
+.header_navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.header_navbar img {
+    width: 50px;
+    height: 50px;
+    cursor: pointer; /* Añade un cursor pointer para indicar que es clickeable */
+}
+
+/* Estilos del formulario de contacto */
+.contact-form {
+    width: 80%;
+    margin: 20px auto;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.form-field {
+    margin-bottom: 1.5rem;
+}
+
+.form-field label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.form-field input,
+.form-field textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1.6rem;
+}
+
+button {
+    width: 100%;
+    padding: 1rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Estilos para redes sociales */
+.social-media {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.social-media h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.social-links a {
+    margin: 0 1rem;
+}
+
+.social-links img {
+    width: 40px;
+    height: 40px;
+}
+
+/* Media Queries para dispositivos móviles */
+@media (max-width: 768px) {
+    header {
+        height: 12%; /* Ajustamos la altura del encabezado en dispositivos pequeños */
+    }
+
+    .header_navbar img {
+        width: 40px; /* Hacemos más pequeño el icono del menú */
+        height: 40px;
+    }
+
+    .contact-form {
+        width: 90%;
+    }
+
+    .social-links img {
+        width: 35px;
+        height: 35px;
+    }
+}

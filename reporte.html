@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportes - Student Guard</title>
+    <link rel="stylesheet" href="reporte.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" crossorigin=""></script>
+</head>
+<body>
+    <header>
+        <section class="header_logo">
+            <img src="./imgs/LogoStudent.png" alt="Student Guard">
+        </section>
+        <section class="header_navbar">
+            <a href="./navbar.html"><img src="./imgs/lines.svg" alt="Menú" class="nav_link"></a>
+        </section>
+    </header>
+
+    <main>
+        <div class="maintitle">
+            <h1>Reportes</h1>
+        </div>
+
+        <div class="main_inputs">
+            <div class="inputlugar">
+                <h3>Nombre</h3>
+                <input type="text" placeholder="Ingresa tu nombre">
+            </div>
+            <div class="inputincidencia">
+                <h3>Incidencia ocurrida</h3>
+                <input type="text" placeholder="Descripción de la incidencia">
+            </div>
+            <div class="inputlugar">
+                <h3>¿Dónde ocurrió?</h3>
+                <div id="map" style="height: 300px;"></div>
+            </div>
+            <div class="inputimagen">
+                <h3>Adjuntar imagen (Opcional)</h3>
+                <input type="file" accept="image/*">
+            </div>
+            <div class="button_container">
+                
+                <button id="butonevniar">Enviar Reporte</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('butonevniar').addEventListener('click', function() {
+    location.reload();  // Esto recarga la página
+});
+       
+        var map = L.map('map').setView([25.6936962, -100.2685415], 14.5);
+        
+        var tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+        }).addTo(map);
+        
+        var marker = L.marker([25.6936962, -100.2685415]).addTo(map);
+    </script>
+</body>
+</html>
